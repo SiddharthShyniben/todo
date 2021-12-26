@@ -25,6 +25,8 @@
 
 			event.target.value = '';
 
+			cache()
+
 			return false;
 		}
 	}	
@@ -33,6 +35,7 @@
 		return function() {
 			todos.splice(i, 1);
 			todos = todos;
+			cache()
 		}
 	}
 
@@ -40,6 +43,7 @@
 		return function() {
 			completedTodos.splice(i, 1);
 			completedTodos = completedTodos;
+			cache()
 		}
 	}
 
@@ -48,6 +52,7 @@
 			completedTodos = [...completedTodos, todos[i]];
 			todos.splice(i, 1);
 			todos = todos;
+			cache()
 		}
 	}
 
@@ -56,6 +61,7 @@
 			todos = [...todos, completedTodos[i]];
 			completedTodos.splice(i, 1);
 			completedTodos = completedTodos;
+			cache()
 		}
 	}
 </script>
